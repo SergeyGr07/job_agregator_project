@@ -16,10 +16,7 @@ options.add_argument("--headless")
 # Инициализируем драйвер браузера
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
-# driver = webdriver.Chrome(
-#     executable_path="D:\job_agregator_project\parser\chrome_driver\chromedriver.exe",
-#     options=options
-# )
+
 
 try:
     # Открываем страницу
