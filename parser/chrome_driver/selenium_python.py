@@ -19,7 +19,7 @@ service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
 
 # Инициализируем бота
-bot = Bot(token="6120394891:AAH6XO2WW2LSTeBEt-TmpCTQtapZ9ysuDSE")
+bot = Bot(token="Token")
 dp = Dispatcher(bot)
 
 users = []
