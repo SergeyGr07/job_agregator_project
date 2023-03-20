@@ -1,11 +1,25 @@
 import time
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 # Устанавливаем ссылки на страницы, которые нужно проверять
 url = "https://kino-mall.ru/schedule/?date=23.03.2023"
 
+# options
+options = webdriver.ChromeOptions()
+
+# headless mode
+options.add_argument("--headless")
+
+
 # Инициализируем драйвер браузера
-driver = webdriver.Chrome(executable_path="D:\job_agregator_project\parser\chrome_driver\chromedriver.exe")
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service, options=options)
+# driver = webdriver.Chrome(
+#     executable_path="D:\job_agregator_project\parser\chrome_driver\chromedriver.exe",
+#     options=options
+# )
 
 try:
     # Открываем страницу
